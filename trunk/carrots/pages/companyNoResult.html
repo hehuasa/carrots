@@ -1,0 +1,40 @@
+<main>
+  <div class="searchCompany-result-content">
+    <div class="searchCompany-result-content-info">
+      <img src="../img/ufo.png">
+      <div>
+      <div class="font-tittle">   暂时没有符合该搜索条件的公司</div>
+      <div class="font-content">   请重新修改搜索条件后再次进行搜索</div>
+      </div>
+    </div>
+    <div class="searchCompany-result-Recommend">
+      <div class="font-tittle">推荐公司</div>
+    <div class="col-md-4 col-xs-12 clear-padding-left clear-padding-right" ng-repeat="x in ctrl.data|limitTo:3">
+      <div class="search-company-banner"  ui-sref="pageTab.companyDetails({id:x.id})">
+        <div class="search-company-banner-logo"><img ng-src={{x.logo}}></div>
+        <div class="search-company-banner-text">
+          <div class="font-tittle" ng-bind="x.name"></div>
+          <div class="font-content" ng-bind="x.slogan"></div>
+          <span class="font-content red" ng-bind="x.professionNum"></span><span class="font-content">个在招职位</span>
+        </div>
+        <div class="search-company-banner-detail">
+          <div>
+            <span><img src="../img/mobile.png"></span>
+            <span class="font-tags" ng-repeat="z in x.industryList"><span ng-bind="z|industryFilter"></span></span>
+          </div>
+          <div>
+            <span><img src="../img/chart.png"></span>
+            <span class="font-tags" ng-bind="x.financing | financingFilter"></span>
+          </div>
+          <div>
+            <span><img src="../img/location-gray.png"></span>
+            <span class="font-tags" ng-bind="x.city | cityFilter"></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</main>

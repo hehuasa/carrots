@@ -1,0 +1,51 @@
+<div class="col-sm-12 border-normal">
+  <div class="col-sm-12">
+  <span>模块管理</span>
+  <a class="btn btn-danger button-right" href="javascript:void(0)" ng-click="ctrl.add()">+新增</a>
+    <hr/>
+  </div>
+
+  <div class="col-sm-12">
+    <!-- 表格 -->
+    <table class="table table-table">
+      <thead>
+        <th>自增长ID</th>
+        <th>名称</th>
+        <th>模块对应url地址</th>
+        <th>父模块ID</th>
+        <th>模块类型</th>
+        <th>数据更新时间</th>
+        <th>更新人ID</th>
+        <th>数据创建时间</th>
+        <th>创建者ID</th>
+        <th>操作</th>
+      </thead>
+        <tr ng-repeat="x in ctrl.moduleList">
+          <td ng-bind="x.id"></td><!-- 序号 -->
+          <td ng-bind="x.name"></td><!-- 名称 -->
+          <td ng-bind="x.url"></td><!-- url -->
+          <td ng-bind="x.parentID"></td><!-- 父ID -->
+          <td ng-bind="x.type"></td><!-- 模块类型 -->
+          <td ng-bind="x.updateAt | date:'yyyy-MM-dd HH:mm'"></td><!-- 更新时间 -->
+          <td ng-bind="x.updateBy"></td><!-- 更新人 -->
+          <td ng-bind="x.createAt | date:'yyyy-MM-dd HH:mm'"></td><!-- 创建时间 -->
+          <td ng-bind="x.createBy"></td><!-- 更新人 -->
+          <td>
+            <button class="btn btn-success account-editor" ng-click="ctrl.editor(x.id)">编辑</button>
+            <button class="btn btn-danger account-editor" ng-click="ctrl.delete(x.id)">删除</button>
+          </td><!-- 操作 -->
+        </tr>
+    </table>
+      <!-- 分页 -->
+    <form class="page-form">
+      <div class="form-group account-form">
+        <label class="" for="page" >去第&nbsp</label>
+        <input id="page" class="" type="text" ng-model="ctrl.page">
+        <label class="col-xs-3" for="page" >页</label>
+        <button class="btn btn-primary button-right" ng-click="ctrl.pageChange()">确定</button>
+      </div>
+    </form>
+    <ul uib-pagination items-per-page="10" total-items="ctrl.items" ng-model="ctrl.page" max-size="10" class="pagination-sm page-ul" boundary-links="true" boundary-link-numbers="true" previous-text="<" next-text=">" first-text="首页" last-text="末页" ng-change="ctrl.pageChange()"></ul>
+
+  </div>
+</div>

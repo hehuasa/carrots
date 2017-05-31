@@ -1,0 +1,104 @@
+//created by Mosqlee in 2017/5/12 15.47,this file is used to layout for about us&contact us pages
+@import url(layout.less);
+@import url(reset.less);
+@import url(public.less);
+// 关于我们侧边
+.aboutus-sidebar {
+  padding: 80px 0px;
+  background: @white;
+  .list-group {
+    margin: 0;
+    box-shadow: none;
+    text-align: center;
+    a {
+      border: none;
+      .font-tittle;
+      white-space: nowrap;
+      font-weight: 400;
+      .sidebar-aboutus {
+        background: url(../img/aboutus.png);
+      }
+      .sidebar-contactus {
+        background: url(../img/contactus-phone.png);
+      }
+      &:hover {
+        color: @red;
+        .sidebar-aboutus {
+          background: url(../img/aboutus-hov.png);
+        }
+        .sidebar-contactus {
+          background: url(../img/contactus-phone-hov.png);
+        }
+      }
+    }
+    .aboutus-sidebar-icon {
+      display: inline-block;
+      width: 17px;
+      height: 16px;
+      margin-right: 10px;
+    }
+    // 点击过的按钮类命名为actived
+    .actived {
+      .border-left;
+      background: @gray;
+      color: @red;
+      .border-radius(0);
+      .sidebar-aboutus {
+        background: url(../img/aboutus-hov.png);
+      }
+      .sidebar-contactus {
+        background: url(../img/contactus-phone-hov.png);
+      }
+    }
+  }
+}
+// 关于我们主体部分
+.aboutus-main {
+  height: 611px;
+  padding: 80px;
+  background: @white;
+  .aboutus-main-tittle {
+    .border-left;
+    padding-left: 10px;
+  }
+  p {
+    margin: 40px 15px;
+  }
+  .aboutus-main-bottom {
+    margin-top: -20px;
+  }
+  // 联系我们
+  .contact-main-text {
+    .flex;
+    flex-direction: column;
+    margin: 20px 0 15px 0;
+    .clear-padding-left;
+    div {
+      .flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  }
+  .contact-main-img {
+    width: 100%;
+  }
+  .contact-main-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+  .icon-phone {
+    background: url(../img/contactus-phone-sm.png) no-repeat;
+  }
+  .icon-email {
+    background: url(../img/contact-email.png) no-repeat;
+  }
+  .icon-websit {
+    background: url(../img/contactus-website.png) no-repeat;
+  }
+  .icon-address {
+    background: url(../img/contact-address.png) no-repeat;
+  } 
+}
+

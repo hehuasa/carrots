@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{carrots node_modules}" />
+    <file url="file://$PROJECT_DIR$/pages/header&amp;footer.html" libraries="{ECMAScript 6, WebGL}" />
+    <file url="PROJECT" libraries="{angular, angular-resource, angular-ui-router, bootstrap, jquery}" />
+  </component>
+</project>

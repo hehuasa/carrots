@@ -1,0 +1,131 @@
+/*
+/*
+this stylesheet fuction is layout
+---------------------------------*/
+/*
+---------------------------------
+Site: wenziguo.xin
+Author: mosqlee
+Updated: 2017/5/9 and 15:00
+Updated by: Mosqlee
+---------------------------------
+*/
+//COLORS
+//nav-Body background: red,#f43851,gray:#f6f7f8,white:#fff,dark-gray:#f4f4f4
+// footer background: darkblue,#35485b,
+//font-color: gray:#999,white:#fff,black:#000,dark-blue,#536a82,ddark-blue,#2d3e50,dddark-blue,#2b3d51,
+//Container background: #fff BLUE,#69d1e9
+//Main Text: @dddark-blue: #2b3d51;@dddark-blue: #2b3d51;@dark-blue: #536a82;@black: #000;@white: #fff;@dark-gray: #f4f4f4;
+//button:red#f43851
+//Links: none
+//Visited links: none
+//Hover links: none
+//---------------------------------
+//
+
+// colors
+@red: #f43851;
+@gray: #f4f4f4;
+@middle-gray: #e8e8e8;
+@dark-gray: #999;
+@white: #fff;
+@black: #000;
+@dark-blue: #536a82;
+@ddark-blue: #2d3e50;
+@dddark-blue: #2b3d51;
+// font
+.font-strong{
+  white-space:pre;
+  font-family:  "microsoft yahei", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: @black;
+}
+.font-tittle {
+  white-space:pre;
+  font-family:  "microsoft yahei", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: @black;
+}
+.font-content{
+  white-space:pre;
+  font-family:  "microsoft yahei" ,sans-serif;
+  font-size: 14px;
+  color: @dark-gray;
+}
+.font-tags{
+  white-space:pre;
+  font-family:  "microsoft yahei" ,sans-serif;
+  font-size: 12px;
+  color: @dark-gray;
+}
+//layout
+.font-margin-large{
+  margin: .2rem 0;
+}
+.font-margin-middle{
+  margin: .1rem 0;
+}
+.font-margin-small{
+  margin: .05rem 0;
+}
+.font-padding-large{
+  padding: .2rem 0;
+}
+.font-padding-middle{
+  padding: .1rem 0;
+}
+.font-padding-small{
+  padding: .05rem 0;
+}
+//color
+.red{
+  color:  #fc2a48;
+}
+.white{
+  color: @white;
+}
+.ddark-blue{
+  color:@ddark-blue
+}
+.selected {
+  padding: .05rem;
+  color: @white;
+  background: @red;
+  &:hover {
+    color: #fff;
+    background: #35485b;
+  }
+}
+.selected-tittle{
+  white-space: pre;
+  font-family: "microsoft heiti", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: @black;
+}
+//边框
+.border-top{
+   border-top: 1px solid @middle-gray;
+ }
+.border-right{
+  border-right: 1px solid @middle-gray;
+}
+.border-bottom{
+  border-bottom: 1px solid @middle-gray;
+}
+.border-left{
+  border-left: 1px solid @middle-gray;
+}
+// 右浮动
+.float-right {
+  float: right;
+  }
+// flex兼容写法
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+}

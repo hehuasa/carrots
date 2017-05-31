@@ -1,0 +1,90 @@
+<div class="main-warp borderline-solid">
+    <div class="tittle borderline-bottom-solid">
+        <div class="tittle-text heiti font-l">新增公司</div>
+    </div>
+    <form class="content-add" name="form" enctype="multipart/form-data">
+        <div class="col-xs-3 content-text font-nomal"> 标题名称</div>
+        <input type="text" value="" class="content-input" id="form_tittle" name="form_tittle" ng-model="form_tittle"
+               required>
+        <div>
+            <div class="col-xs-3 content-text font-nomal">类型</div>
+            <select class="form-control" ng-model="form_type" ng-options="x for x in types">
+            </select>
+            <select class="form-control" ng-model="form_type_child" ng-options="x for x in types_child"
+                    ng-show="industry()">
+            </select>
+            <div>
+                <div class="col-xs-3 content-text font-nomal">说明</div>
+                <div type="text" class="uditor-text ueditor" name="form_text" ng-model="form_text">
+                <script type="text/javascript">
+                    $scope.ready = function (editor) {
+                        alert(editor.getContent());
+                    }
+                </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-3 content-text font-nomal">跳转衔接</div>
+        <input type="text" value="" class="content-input " name="form_url" ng-model="from_url" required>
+        <div class="col-xs-3 content-text font-nomal">配图</div>
+        <input type="file" id="file_" style="display: none" accept="image/png,image/jpeg" name="form_img"
+               ng-model="from_img" multiple>
+        <label class="btn btn-primary btn-label" for="file_"> 选择文件</label>
+        <div>
+            <div class="col-xs-3"></div>
+            <div class="img-view"><img id="file_img" ng-src={{imgsrc}}></div>
+        </div>
+        <div class="col-xs-3 disabled"></div>
+        <div>
+            <table class="table-tittle table table-bordered" id="table_tittle">
+                <thead>
+                <th>图片名</th>
+                <th>文件大小(Kb)</th>
+                <th>进度</th>
+                <th>操作</th>
+                <th>操作</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td> {{file_list.name}}</td>
+                    <td>{{file_size}}</td>
+                    <td>
+                        <progress class="progress-file" id="progress_" value=0></progress>
+                    </td>
+                    <td><span class="glyphicon glyphicon-saved font-l glyphicon-file" id="save"></span></td>
+                    <td>
+                        <button type="button" class="btn btn-xs btn-primary btn-file" id="btn_upload"
+                                ng-click="upload_()">上传
+                        </button>
+                        <button type="button" class="btn btn-xs btn-danger btn-file" id="btn_del" ng-click="del_()">删除
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-3"></div>
+        <button type="button" class="btn btn-info btn-online" id="btn_online" ng-click="save()"
+                ng-disabled="
+                form.form_tittle.$invalid||
+                type()||
+                form.form_url.$invalid||
+                img_load()
+                "
+        >立即上线
+        </button>
+        <button type="button" class="btn btn-info btn-save " ng-click="draft()"
+                ng-disabled="
+                form.form_tittle.$invalid||
+                type()||
+                form.form_url.$invalid||
+                img_load()"
+        >存为草稿
+        </button>
+        <button type="button" class="btn btn-default btn-cancel" ui-sref="homepage.list">取消</button>
+
+    </form>
+</div>
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/font.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/backStage.css">
+</head>
+<body ng-app="carrotsBackstage">
+
+<div class="main-warp"    ng-controller="companyInfo as ctrl">
+  <div class="tittle-detail borderline-solid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1 col-xs-12">公司名称</div>
+        <div class="col-md-2 col-xs-12"><input type="text" ng-model="ctrl.companyName"></div>
+        <div class="col-md-1 col-xs-12">公司行业</div>
+        <div class="col-md-2 col-xs-12"><select ng-model="ctrl.companyIndustry" ng-options="x.type as x.name for x in ctrl.industry"></select></div>
+        <div class="col-md-1 col-xs-12">地区</div>
+        <div class="col-md-1 col-xs-12"><select ng-model="ctrl.companyProvince" ng-options="x.ProID as x.ProName for x in ctrl.province"></select></div>
+        <div class="col-md-1 col-xs-12">-</div>
+        <div class="col-md-1 col-xs-12"><select ng-model="ctrl.companyCity"  ng-options="x.CityID as x.CityName for x in ctrl.city"></select></div>
+        <div class="col-md-1 col-xs-12">-</div>
+        <div class="col-md-1 col-xs-12"><select ng-model="ctrl.companyCounty" ng-options="x.Id as x.countyName for x in ctrl.county"></select></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1">产品名称</div>
+        <div class="col-md-2"><input type="text" ng-model="ctrl.product"></div>
+        <div class="col-md-1">融资规模</div>
+        <div class="col-md-2"><select ng-model="ctrl.finance" ng-options="x.type as x.name for x in ctrl.financing"></select></div>
+        <div class="col-md-1">认证状态</div>
+        <div class="col-md-2"><select ng-model="ctrl.approved" ng-options="x.type as x.name for x in ctrl.approved"></select></div>
+        <div class="col-md-1">冻结状态</div>
+        <div class="col-md-2"><select ng-model="ctrl.freezed" ng-options="x.type as x.name for x in ctrl.freezed"></select></div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="panel borderline-solid">
+      <div class="content-head panel-heading white">内容列表
+        <button type="button" class="content-btn btn" ><a > 新增</a></button> </div>
+      <!--<div class="panel-body">-->
+        <!--<ul class="list-group " >-->
+          <!--<li class=" reset-ul list-group-items list-tittle borderline-bottom-solid ">-->
+            <!--<div class="col-xs-1 heiti font-s center reset-ul">ID</div>-->
+            <!--<div class="col-xs-2 heiti font-s center reset-ul">名称</div>-->
+            <!--<div class="col-xs-2 heiti font-s center reset-ul">类型</div>-->
+            <!--<div class="col-xs-1 heiti font-s center reset-ul">发布时间</div>-->
+            <!--<div class="col-xs-1 heiti font-s center reset-ul">修改时间</div>-->
+            <!--<div class="col-xs-1 heiti font-s center reset-ul">发布者</div>-->
+            <!--<div class="col-xs-1 heiti font-s center reset-ul">状态</div>-->
+            <!--<div class="col-xs-3 heiti font-s center reset-ul">操作</div>-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<ul class="col-xs-1 heiti font-s center reset-ul">-->
+          <!--<li class=" reset-li "  >{{x.id}}-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<ul class="col-xs-2 heiti font-s center reset-ul">-->
+          <!--<li class=" reset-li"  >{{x.title}}-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<ul class="col-xs-2 heiti font-s center reset-ul">-->
+          <!--<li class=" reset-li" >{{x.type | type}}-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<ul class="col-xs-1 heiti font-s center reset-ul">-->
+          <!--<li class=" reset-li" >{{x.createAt| date:'yyyy-MM-dd HH:mm:ss' }}-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<ul class="col-xs-1 heiti font-s center reset-ul">-->
+          <!--<li class=" reset-li"  >{{x.updateAt| date:'yyyy-MM-dd HH:mm:ss' }}-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<ul class="col-xs-1 heiti font-s center reset-ul">-->
+          <!--<li class=" reset-li" >{{x.author}}-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<ul class="col-xs-1 heiti font-s center reset-ul">-->
+          <!--<li class=" reset-li">{{x.status | state}}-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<ul class="col-xs-3 heiti font-s center reset-ul">-->
+          <!--<li class=" reset-li" >-->
+            <!--<a type="button" class="btn btn-sm font-s"> {{z.a}} </a>-->
+            <!--<a type="button" class="btn btn-sm font-s"> {{z.b}} </a>-->
+            <!--<a type="button" class="btn btn-sm font-s"> {{z.c}} </a>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+      <!--<div class="page font-s">-->
+      <!--<form>-->
+      <!--每页显示 <input type="text" class="page-input" ng-model="size" > 条</form>-->
+      <!--<button type="button" ng-click="page_first()">首页</button>-->
+      <!--<button type="button" ng-click="page_last()"><</button>-->
+      <!--<button type="button"  ng-repeat="c in pages" ng-click="page_turn()">{{c}}</button>-->
+      <!--<button type="button"ng-click="page_next()" >></button>-->
+      <!--<button type="button"ng-click="page_final()">末页</button>-->
+      <!--<form>-->
+      <!--去第 <input type="text"ng-model="page"> 页</form>-->
+      <!--<button type="button" ng-click="http()">确定</button>-->
+      <!--</div>-->
+      <!--<div turn-page pages="pages" size="size" page="page" page_first="page_first()" page_last="page_last()"-->
+           <!--page_turn="page_turn()" page_next="page_next()" page_final="page_final()" http="http()"></div>-->
+    </div>
+  </div>
+</div>
+</body>
+
+<script src="../node_modules/angular/angular.js"></script>
+<script src="https://cdn.bootcss.com/angular-resource/1.5.0/angular-resource.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/app/app.js"></script>
+<script src="../js/controller/carrotsBackstageCtrl.js"></script>
+<script src="../js/service/carrotsBackstageService.js"></script>
+<script src="../js/constant/constant.js"></script>
+</html>

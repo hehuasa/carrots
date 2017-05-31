@@ -1,0 +1,134 @@
+<main>
+  <div class="jobdetails-warp-lg">
+  <div class="col-md-8">
+    <div class="jobdetails-warp-jobdetails">
+      <div class="font-tittle" ng-bind="ctrl.data.name"></div>
+      <div class="font-tags" ng-bind="ctrl.data.companyName"></div>
+      <div>
+        <span class="font-content red" ng-bind="ctrl.data.compensation | compensationFilter"></span>
+        <span class="font-content">   <img src="../img/location-gray.png">   </span><span class="font-content"  ng-bind="ctrl.data.city | cityFilter"></span>
+        <span class="font-content">   <img src="../img/hat.png">   </span><span class="font-content"  ng-bind="ctrl.data.education| educationFilter"></span>
+        <span class="font-content">   <img src="../img/bag.png">   </span><span class="font-content"  ng-bind="ctrl.data.experience|experienceFilter"></span>
+      </div>
+      <div class="jobdetails-warp-jobdetails-tags">
+        <span class="newPosition-content-jobs-tags font-tags" ng-repeat="x in ctrl.data.tags"><span ng-bind="x.tags"></span></span>
+      </div>
+      <div>
+        <span class="font-tags"><img src="../img/clock.png">   </span><span class="font-tags"  ng-bind="ctrl.data.updateAt | date:'yyyy-MM-dd'"><img src="../img/clock.png"></span>
+        <span class="font-tags"></span>
+      </div>
+      <div class="font-tittle jobdetails-warp-description">职位描述</div>
+      <div class="font-tittle">岗位职责</div>
+      <div class="font-content" ng-bind="ctrl.data.responsibility"></div>
+      <div class="font-tittle">必要条件</div>
+      <div class="font-content" ng-bind="ctrl.data.requisite"></div>
+      <div class="font-tittle">公司福利</div>
+      <div class="font-content" ng-bind="ctrl.data.boon"></div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="jobdetails-warp-companyinfo">
+      <div class="jobdetails-warp-companyinfo-pic">
+        <img ng-src={{ctrl.data.logo}}>
+      </div>
+      <div>
+        <span class="font-content" ng-bind="ctrl.data.companyName">携程旅行网</span>
+        <span><img src="../img/paperclip.png"></span></div>
+      <div class="companyinfo-basicinfo">
+        <span class="font-content">基本信息 </span>
+        <span class="companyinfo-line"></span>
+      </div>
+      <div class="companyinfo-detail">
+        <span><img src="../img/body.png"></span>
+        <span class="font-content" ng-bind="ctrl.data.totalNum"></span>
+      </div>
+      <div class="companyinfo-detail">
+        <span><img src="../img/bottle.png"></span>
+        <span class="font-content" ng-repeat="x in ctrl.data.industryList"><span ng-bind="x.industry | industryFilter"></span></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="companyinfo-share">
+      <span><img src="../img/share.png"></span>
+      <span class="font-content"> 分享  </span>
+      <span><img src="../img/wechat-logo.png"></span>
+      <span><img src="../img/qq-logo.png"></span>
+      <span><img src="../img/weibo-logo.png"></span>
+      <button type="button" class="companyinfo-share-btn">我感兴趣</button>
+    </div>
+  </div>
+</div>
+  <div class="jobdetails-warp-md">
+    <div class="jobdetails-warp-companyinfo">
+      <div class="jobdetails-warp-companyinfo-head">
+      <div class="jobdetails-warp-companyinfo-pic">
+        <img ng-src={{ctrl.data.logo}}>
+      </div>
+      <div>
+        <div class="font-tittle ddark-blue" ng-bind="ctrl.data.companyName"></div>
+        <div class="font-content ddark-blue" ng-repeat="x in ctrl.data.industryList"><span ng-bind="x.industry  | industryFilter"></span></div>
+      </div>
+      </div>
+      <div class="companyinfo-basicinfo">
+        <div class="jobdetails-warp-companyinfo-tags" ng-repeat="x in ctrl.data.tags">
+          <span class="font-tags newPosition-content-jobs-tags" ng-bind="x.tags"></span>
+        </div>
+        <div class="font-content jobdetails-warp-companyinfo-introductions"></div>
+        <a class="btn jobdetails-warp-show">
+          <span class="red font-tittle">展开  </span>
+          <span><img src="../img/triangle.png"></span>
+        </a>
+        <div class="companyinfo-detail border-bottom">
+          <span><img src="../img/body-red.png"></span>
+          <span class="font-content" ng-bind="ctrl.data.totalNum"></span>
+          <span class="font-content">人</span>
+        </div>
+        <div class="companyinfo-detail border-bottom">
+          <span><img src="../img/bottle-red.png"></span>
+          <span class="font-content"  ng-repeat="x in ctrl.data.industryList"><span ng-bind="x.industry | industryFilter"></span></span>
+        </div>
+        <div class="companyinfo-detail">
+          <span class="font-content"><img src="../img/location-red.png"></span>
+          <span class="font-content"  ng-bind="ctrl.data.city | cityFilter">
+            <img src="../img/location-red.png">
+          </span>
+        </div>
+        </div>
+      </div>
+    <div class="jobdetails-warp-jobdetails">
+      <div class="jobdetails-warp-jobdetails-tittle">
+        <span class="font-tittle red"  ng-bind="ctrl.data.name"></span>
+        <span class="font-content red" ng-bind="ctrl.data.compensation | compensationFilter"></span>
+      </div>
+        <div>
+          <span class="font-content"><img src="../img/location-red.png"></span>
+          <span class="font-content"  ng-bind="ctrl.data.city | cityFilter"></span>
+          <span class="font-content"><img src="../img/hat-red.png"></span>
+          <span class="font-content"  ng-bind="ctrl.data.education| educationFilter"></span>
+          <span class="font-content"><img src="../img/bag-red.png"></span>
+          <span class="font-content"  ng-bind="ctrl.data.experience|experienceFilter"></span>
+        </div>
+        <div class="font-tittle jobdetails-warp-description">职位描述</div>
+          <div class="font-tittle description-tittle">岗位职责</div>
+          <div class="font-content" ng-bind="ctrl.data.responsibility"></div>
+          <div class="font-tittle description-tittle">必要条件</div>
+          <div class="font-content" ng-bind="ctrl.data.requisite"></div>
+          <div class="font-tittle description-tittle">公司福利</div>
+          <div class="font-content" ng-bind="ctrl.data.boon"></div>
+      <a class="btn jobdetails-warp-show">
+        <span class="red font-tittle">展开  </span>
+        <span><img src="../img/triangle.png"></span>
+      </a>
+      </div>
+    <a class="btn jobdetails-warp-md-btn">
+      <span class="red font-tittle">查看所有</span>
+      <span class="red font-tittle" ng-bind="ctrl.data.totalNum"></span>
+      <span class="red font-tittle">个职位</span>
+    </a>
+    <div class="companyinfo-share">
+      <button class="btn btn-block companyinfo-share-btn font-tittle">我感兴趣</button>
+    </div>
+    </div>
+
+</main>

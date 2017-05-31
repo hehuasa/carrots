@@ -1,0 +1,30 @@
+
+<div>
+    <header>
+        <div class="header-warp">
+            <div class="font-l white">萝卜多后台管理系统</div>
+            <div class="white font-nomal">管理员&nbsp;&nbsp;<span class="glyphicon glyphicon-user">&nbsp;</span>用户&nbsp;
+                <button type="button" class="btn btn-sm font-nomal white">退出</button> </div>
+        </div>
+    </header>
+    <main>
+
+        <div class="route font-nomal borderline-solid" >
+            <button type="button" class="btn-welcome borderline-bottom-solid">
+                <span class="glyphicon glyphicon-briefcase"> <a href="#/" class="btn-welcome" ui-sref=".wel">欢迎页</a></span>
+            </button>
+            <button type="button" class="btn-welcome borderline-bottom-solid " id="btn">
+                <span class="	glyphicon glyphicon-asterisk"></span> <a href="#"> 信息管理</a>
+            </button>
+            <ul class="btn-welcome " id="ul_">
+                <li class="borderline-bottom-solid" ui-sref=".list">
+                    <a href="#/list" >公司列表</a>
+                </li>
+                <li class="borderline-bottom-solid" ui-sref=".add">
+                    <a href="#/add">新增公司</a>
+                </li>
+            </ul>
+        </div>
+        </main>
+ <div ui-view=""></div>
+</div>

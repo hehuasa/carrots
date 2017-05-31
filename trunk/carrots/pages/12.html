@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>萝卜多--知根知底的社群招聘</title>
+
+</head>
+<body>
+
+</body>
+<script>
+  var data = ['法国','法国','澳大利亚','智利','新西兰','西班牙','加拿大','阿根廷','美国','0','国产','波多黎各','英国','比利时','德国','意大利','意大利'];
+  var result = [];
+  for(var i=0,len=data.length;i<len;i+=4){
+    if (i+4>data.length){
+      result.push(data.slice(i,data.length+1));
+      for (var z= 0;z<(i+4-data.length);z++){
+        result[result.length-1].push(data[z])
+      }
+    }else {
+      result.push(data.slice(i,i+4));
+    }
+  }
+  console.log(result)
+</script>
+</html>

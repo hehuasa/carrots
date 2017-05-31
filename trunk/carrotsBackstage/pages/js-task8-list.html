@@ -1,0 +1,97 @@
+
+
+    <div class="main-warp" >
+    <div class="tittle-detail borderline-solid">
+        <span class="col-md-2 col-xs-12 font-nomal heiti">发布时间</span>
+        <div  class="col-xs-12 col-md-2 font-nomal heiti">
+            <input type="text"  ng-model="startTime" id="start_date" ui-date />
+        </div>
+            <span class="col-md-1 col-xs-12 font-nomal heiti">-</span>
+        <div  class="col-xs-12 col-md-2 font-nomal heiti">
+            <input type="text" ng-model="endTime"  id="end_date" ui-date />
+        </div>
+        <span class="col-md-2 col-xs-12 font-nomal heiti">状态</span>
+        <div  class="col-xs-12 col-md-2">
+            <select class="control font-nomal heiti" ng-model="state" ng-options="s for s in states" >
+            </select>
+        </div>
+            <span class="col-md-2 col-xs-12 font-nomal heiti">类型</span>
+        <div  class="col-xs-12 col-md-2 font-nomal heiti">
+            <select class="control font-nomal heiti" ng-model="type" ng-options="s for s in types">
+            </select>
+        </div>
+        <div  class="col-xs-12 col-md-8">
+        <button type="button" class="clear btn btn-sm borderline-solid" ng-click="clear()">清空</button>
+        <button type="button" class="search btn btn-sm borderline-solid" ng-click="search()">搜索</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="panel borderline-solid">
+            <div class="content-head panel-heading white">内容列表
+                <button type="button" class="content-btn btn" ui-sref="homepage.add"><a href="#/add"> 新增</a></button> </div>
+            <div class="panel-body">
+                <ul class="list-group " >
+                    <li class=" reset-ul list-group-items list-tittle borderline-bottom-solid ">
+                        <div class="col-xs-1 heiti font-s center reset-ul">ID</div>
+                        <div class="col-xs-2 heiti font-s center reset-ul">名称</div>
+                        <div class="col-xs-2 heiti font-s center reset-ul">类型</div>
+                        <div class="col-xs-1 heiti font-s center reset-ul">发布时间</div>
+                        <div class="col-xs-1 heiti font-s center reset-ul">修改时间</div>
+                        <div class="col-xs-1 heiti font-s center reset-ul">发布者</div>
+                        <div class="col-xs-1 heiti font-s center reset-ul">状态</div>
+                        <div class="col-xs-3 heiti font-s center reset-ul">操作</div>
+                    </li>
+                    </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                    <li class=" reset-li "  ng-repeat="x in a track by $index " >{{x.id}}
+                    </li>
+                </ul>
+                <ul class="col-xs-2 heiti font-s center reset-ul">
+                    <li class=" reset-li"  ng-repeat="x in a track by $index" >{{x.title}}
+                    </li>
+                </ul>
+                <ul class="col-xs-2 heiti font-s center reset-ul">
+                    <li class=" reset-li"  ng-repeat="x in a track by $index" >{{x.type | type}}
+                    </li>
+                </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                <li class=" reset-li"  ng-repeat="x in a track by $index" >{{x.createAt| date:'yyyy-MM-dd HH:mm:ss' }}
+                </li>
+                </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                <li class=" reset-li"  ng-repeat="x in a  track by $index" >{{x.updateAt| date:'yyyy-MM-dd HH:mm:ss' }}
+                </li>
+                </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                    <li class=" reset-li"  ng-repeat="x in a  track by $index " >{{x.author}}
+                    </li>
+                </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                    <li class=" reset-li"  ng-repeat="x in a track by $index " >{{x.status | state}}
+                    </li>
+                </ul>
+                <ul class="col-xs-3 heiti font-s center reset-ul">
+                    <li class=" reset-li" ng-repeat="z in a track by $index">
+                       <a type="button" class="btn btn-sm font-s" ng-click="offline(z.id,z.status,$index)"> {{z.a}} </a>
+                        <a type="button" class="btn btn-sm font-s" ui-sref="homepage.add({id:z.id})"> {{z.b}} </a>
+                        <a type="button" class="btn btn-sm font-s" ng-click="delete(z.id)"> {{z.c}} </a>
+                    </li>
+                </ul>
+            </div>
+            <!--<div class="page font-s">-->
+                <!--<form>-->
+                    <!--每页显示 <input type="text" class="page-input" ng-model="size" > 条</form>-->
+                <!--<button type="button" ng-click="page_first()">首页</button>-->
+                <!--<button type="button" ng-click="page_last()"><</button>-->
+                <!--<button type="button"  ng-repeat="c in pages" ng-click="page_turn()">{{c}}</button>-->
+                <!--<button type="button"ng-click="page_next()" >></button>-->
+                <!--<button type="button"ng-click="page_final()">末页</button>-->
+                <!--<form>-->
+                    <!--去第 <input type="text"ng-model="page"> 页</form>-->
+                <!--<button type="button" ng-click="http()">确定</button>-->
+            <!--</div>-->
+            <div turn-page pages="pages" size="size" page="page" page_first="page_first()" page_last="page_last()"
+                 page_turn="page_turn()" page_next="page_next()" page_final="page_final()" http="http()"></div>
+        </div>
+    </div>
+    </div>

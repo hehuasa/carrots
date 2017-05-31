@@ -1,0 +1,35 @@
+<div class="col-sm-12 border-normal">
+  <div class="col-sm-12">
+  <span>模块编辑</span>
+    <hr/>
+  </div>
+  <form class="col-xs-10 col-xs-offset-1" name="myForm" novalidate>
+    <div class="form-group col-xs-12 account-form">
+        <label class="col-xs-6 col-sm-2" for="role">名称</label>
+        <input class="account-form-control col-xs-6 col-sm-10" name="oldPwd" type="text" ng-model="ctrl.module.name" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form" ng-show="myForm.oldPwd.$invalid&&myForm.oldPwd.$dirty">
+      <p class="col-xs-6 col-sm-10 col-sm-offset-2 col-xs-offset-6">名称必填</p>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role" >MenuId</label>
+      <input name="pwd" class="account-form-control col-xs-6 col-sm-10" type="text" name="newPwd" ng-model="ctrl.module.menuID">
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role" >URL地址</label>
+      <input name="phone" class="account-form-control col-xs-6 col-sm-10" type="text"  ng-model="ctrl.module.url" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role" >父模块ID</label>
+      <input name="phone" class="account-form-control col-xs-6 col-sm-10" type="text"  ng-model="ctrl.module.parentID" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role" >模块类别</label>
+      <input name="phone" class="account-form-control col-xs-6 col-sm-10" type="text"  ng-model="ctrl.module.type" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <button class="col-xs-6 col-sm-5 col-sm-offset-2 btn btn-success" ng-disabled="myForm.$invalid" ng-click="ctrl.save()">保存</button>
+      <button class="col-xs-6 col-sm-5 col-sm-offset-2 btn btn-danger" back>取消</button>
+    </div>
+  </form>
+</div>

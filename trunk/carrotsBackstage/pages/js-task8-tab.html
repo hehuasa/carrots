@@ -1,0 +1,105 @@
+<div >
+    <header>
+        <div class="header-warp" >
+            <div class="font-l white">萝卜多后台管理系统</div>
+            <div class="white font-nomal">{{role}}&nbsp;&nbsp;<span class="glyphicon glyphicon-user">&nbsp;</span>{{account}}&nbsp;
+                <button type="button" class="btn btn-sm font-nomal white" ng-click="loginout()">退出</button> </div>
+        </div>
+    </header>
+    <main>
+        <div class="route font-nomal borderline-solid " >
+            <button type="button" class="btn-welcome borderline-bottom-solid white  font-l" ng-click="show()">
+                <span class="glyphicon glyphicon-pencil  "></span> 信息管理
+                <span class="glyphicon glyphicon-chevron-left font-xs right" ></span>
+                <span class="glyphicon glyphicon-chevron-down font-xs right" style="display: none"></span>
+            </button>
+            <ul class="btn-welcome white">
+                <li class="borderline-bottom-solid">
+                    <button class="btn btn-block white">公司列表</button>
+                </li>
+                <li class="borderline-bottom-solid" >
+                    <button class="btn btn-block white">新增公司</button>
+                </li>
+            </ul>
+            <button type="button" class="btn-welcome borderline-bottom-solid white font-l" ng-click="show()">
+                <span class="glyphicon glyphicon-pencil "></span> Article管理
+                <span class="glyphicon glyphicon-chevron-left font-xs right" ></span>
+                <span class="glyphicon glyphicon-chevron-down font-xs right" style="display: none"></span>
+            </button>
+            <ul class="btn-welcome white">
+                <li class="borderline-bottom-solid">
+                    <button class="btn btn-block white font-nomal" ui-sref="homepage.list">Article列表</button>
+                </li>
+            </ul>
+            <button type="button" class="btn-welcome borderline-bottom-solid white font-l" ng-click="show()">
+                <span class="glyphicon glyphicon-pencil "></span> 人才管理
+                <span class="glyphicon glyphicon-chevron-left font-xs right" ></span>
+                <span class="glyphicon glyphicon-chevron-down font-xs right" style="display: none"></span>
+            </button>
+            <ul class="btn-welcome white">
+                <li class="borderline-bottom-solid">
+                    <button class="btn btn-block white " >候选人列表</button>
+                </li>
+                <li class="borderline-bottom-solid" >
+                    <button class="btn btn-block white" >人才列表</button>
+
+                </li>
+            </ul>
+            <button type="button" class="btn-welcome borderline-bottom-solid white font-l" ng-click="show()">
+                <span class="glyphicon glyphicon-pencil "></span> 推荐管理
+                <span class="glyphicon glyphicon-chevron-left font-xs right" ></span>
+                <span class="glyphicon glyphicon-chevron-down font-xs right" style="display: none"></span>
+            </button>
+            <ul class="btn-welcome white">
+                <li class="borderline-bottom-solid">
+                    <button class="btn btn-block white">推荐列表</button>
+                </li>
+            </ul>
+            <button type="button" class="btn-welcome borderline-bottom-solid white font-l" ng-click="show()">
+                <span class="glyphicon glyphicon-pencil "></span>后台管理
+                <span class="glyphicon glyphicon-chevron-left font-xs right" ></span>
+                <span class="glyphicon glyphicon-chevron-down font-xs right" style="display: none"></span>
+            </button>
+            <ul class="btn-welcome white">
+                <li class="borderline-bottom-solid">
+                    <button class="btn btn-block white" >模块管理</button>
+                </li>
+                <li class="borderline-bottom-solid" >
+                    <button class="btn btn-block white" >角色管理</button>
+                </li>
+                <li class="borderline-bottom-solid" >
+                    <button class="btn btn-block white" >密码管理</button>
+                </li>
+                <li class="borderline-bottom-solid" >
+                    <button class="btn btn-block white" >账户管理</button>
+                </li>
+            </ul>
+            <button type="button" class="btn-welcome borderline-bottom-solid white font-l" ng-click="show()">
+                <span class="glyphicon glyphicon-pencil "></span>用户管理
+                <span class="glyphicon glyphicon-chevron-left font-xs right" ></span>
+                <span class="glyphicon glyphicon-chevron-down font-xs right" style="display: none"></span>
+            </button>
+            <ul class="btn-welcome white">
+                <li class="borderline-bottom-solid">
+                    <button class="btn btn-block white" >用户列表</button>
+                </li>
+            </ul>
+            <button type="button" class="btn-welcome borderline-bottom-solid white font-l" ng-click="show()">
+                <span class="glyphicon glyphicon-pencil "></span>内容管理
+                <span class="glyphicon glyphicon-chevron-left font-xs right" ></span>
+                <span class="glyphicon glyphicon-chevron-down font-xs right" style="display: none"></span>
+            </button>
+            <ul class="btn-welcome white">
+                <li class="borderline-bottom-solid">
+                    <button class="btn btn-block white" >文章管理</button>
+                </li>
+                <li class="borderline-bottom-solid" >
+                    <button class="btn btn-block white" >视频管理</button>
+                </li>
+            </ul>
+
+        </div>
+    </main>
+
+</div>
+<div ui-view=""></div>

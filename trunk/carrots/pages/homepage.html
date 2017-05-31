@@ -1,0 +1,289 @@
+<main>
+  <div class="homepage-banner">
+    <img src="../img/homepage-banner.png">
+  </div>
+  <div class="homepage-advantage">
+    <div class="col-lg-3 col-md-3 col-xs-12 homepage-advantage-content">
+      <img src="../img/rocket.png">
+      <span class="font-tittle">超短响应时间</span>
+      <span class="font-content>">48小时高效推荐</span>
+    </div>
+    <div class="col-lg-3 col-md-3 col-xs-12 homepage-advantage-content">
+      <img src="../img/coin.png">
+      <span class="font-tittle">行业1/3的价格</span>
+      <span class="font-content>">成功推荐仅收费1月工资</span>
+    </div>
+    <div class="col-lg-3 col-md-3 col-xs-12 homepage-advantage-border homepage-advantage-content">
+      <img src="../img/zoom.png">
+      <span class="font-tittle">三维的人才评测</span>
+      <span class="font-content>">技术人事背景三维评定</span>
+    </div>
+    <div class="homepage-advantage-count  col-md-3 col-xs-12">
+      <span class="font-tittle red">500+</span>
+      <span class="font-tittle">人才入职</span>
+      <span class="font-tittle red">498+</span>
+      <span class="font-tittle">成功转正</span>
+      <span class="font-tittle red">98%</span>
+      <span class="font-tittle">成功率</span>
+    </div>
+  </div>
+  <div class="homepage-position">
+    <div class="homepage-tittle">
+      <div class="homepage-tittle-strong">最新职位</div>
+      <div class="homepage-tittle-line"></div>
+      <div class="homepage-tittle-text">NEW POSITION</div>
+    </div>
+    <div class="homepage-position-href">
+      <a ui-sref="pageTab.jobNewest" class="ddark-blue">更多></a>
+    </div>
+    <div id="positionCarousel" class="carousel slide">
+      <!-- 轮播（Carousel）指标 -->
+      <ol class="carousel-indicators">
+        <li data-target="#positionCarousel" ng-repeat="x in ctrl.bannerItem track by $index" data-slide-to='index' ng-class="active:$first"></li>
+        <!--<li data-target="#positionCarousel" data-slide-to="1"></li>-->
+      </ol>
+      <!-- 轮播（Carousel）项目 -->
+      <div class="carousel-inner">
+        <div carousel></div>
+        <!--<div class="item active">-->
+          <!--<div class="col-md-3  col-xs-12" ng-repeat="x in ctrl.data track by $index | limitTo: 4">-->
+            <!--<div class="homepage-position-content">-->
+              <!--<div class="homepage-position-content-logo">-->
+                <!--<img ng-src={{x.logo}}>-->
+              <!--</div>-->
+              <!--<div class="homepage-position-content-text">-->
+                <!--<div class="font-tittle" ng-bind="x.name"></div>-->
+                <!--<div class="homepage-position-line"></div>-->
+                <!--<div class="font-tags" ng-bind="x.companyName"></div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+          <!--<div class="col-md-3  col-xs-12" ng-repeat="x in ctrl.data track by $index | limitTo: 4">-->
+            <!--<div class="homepage-position-content">-->
+              <!--<div class="homepage-position-content-logo">-->
+                <!--<img ng-src={{x.logo}}>-->
+              <!--</div>-->
+              <!--<div class="homepage-position-content-text">-->
+                <!--<div class="font-tittle" ng-bind="x.name"></div>-->
+                <!--<div class="homepage-position-line"></div>-->
+                <!--<div class="font-tags" ng-bind="x.companyName"></div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+          <!--<div class="col-md-3  col-xs-12" ng-repeat="x in ctrl.data track by $index | limitTo: 4">-->
+            <!--<div class="homepage-position-content">-->
+              <!--<div class="homepage-position-content-logo">-->
+                <!--<img ng-src={{x.logo}}>-->
+              <!--</div>-->
+              <!--<div class="homepage-position-content-text">-->
+                <!--<div class="font-tittle" ng-bind="x.name"></div>-->
+                <!--<div class="homepage-position-line"></div>-->
+                <!--<div class="font-tags" ng-bind="x.companyName"></div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="item">-->
+          <!--<div class="col-md-3  col-xs-12" ng-repeat="x in ctrl.data track by $index | limitTo: 4">-->
+            <!--<div class="homepage-position-content">-->
+              <!--<div class="homepage-position-content-logo">-->
+                <!--<img ng-src={{x.logo}}>-->
+              <!--</div>-->
+              <!--<div class="homepage-position-content-text">-->
+                <!--<div class="font-tittle" ng-bind="x.name"></div>-->
+                <!--<div class="homepage-position-line"></div>-->
+                <!--<div class="font-tags" ng-bind="x.companyName"></div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        </div>
+      <!-- 轮播（Carousel）导航 -->
+      <button  type="button" class="carousel-btn-left"  href="#positionCarousel"
+               data-slide="prev"><img src="../img/carousel-btn-left.png"></button>
+      <button class="carousel-btn-right" href="#positionCarousel"
+              data-slide="next"><img src="../img/carousel-btn-right.png"></button>
+    </div>
+  </div>
+  <div class="homepage-step">
+    <div class="homepage-tittle">
+      <div class="homepage-tittle-strong">服务流程</div>
+      <div class="homepage-tittle-line"></div>
+      <div class="homepage-tittle-text">SERVICE FLOW</div>
+      <div class="col-md-offset-1 col-md-2 col-xs-12">
+        <div class=" homepage-step-content">
+        <div>
+          <img src="../img/shake-hands.png">
+        </div>
+        <span>1.意向测评，深入评审</span>
+          </div>
+      </div>
+      <div class="col-md-2 homepage-step-plane">
+        <img src="../img/plane.png">
+      </div>
+      <div class="col-md-2  col-xs-12">
+        <div class=" homepage-step-content">
+        <div>
+          <img src="../img/negotiation.png">
+        </div>
+        <span>2.确认合作，签订合同</span>
+      </div>
+      </div>
+      <div class="col-md-2 homepage-step-plane">
+        <img src="../img/plane.png">
+      </div>
+      <div class="col-md-2  col-xs-12">
+        <div class=" homepage-step-content">
+        <div>
+          <img src="../img/talk.png">
+        </div>
+        <span>3.提出需求，提供jd</span>
+      </div>
+      </div>
+      <div class="col-md-offset-1 col-md-2 col-xs-12">
+        <div class=" homepage-step-content">
+        <div>
+          <img src="../img/Interview.png">
+        </div>
+        <span>4.开始招聘，人才海选</span>
+      </div>
+      </div>
+      <div class="col-md-2 homepage-step-plane">
+        <img src="../img/plane.png">
+      </div>
+      <div class="col-md-2  col-xs-12">
+        <div class=" homepage-step-content">
+        <div>
+          <img src="../img/CV.png">
+        </div>
+        <span>5.人才测评，简历脱水</span>
+      </div>
+      </div>
+      <div class="col-md-2 homepage-step-plane">
+        <img src="../img/plane.png">
+      </div>
+      <div class="col-md-2  col-xs-12">
+        <div class=" homepage-step-content">
+        <div>
+          <img src="../img/backstage.png">
+        </div>
+        <span>6.上岗，转入售后</span>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="homepage-partneradvice">
+    <div class="homepage-tittle">
+    <div class="homepage-tittle-strong">伙伴之言</div>
+    <div class="homepage-tittle-line"></div>
+    <div class="homepage-tittle-text">PARTNER  ADVICE</div>
+    </div>
+    <div id="partneradviceCarousel" class="carousel slide">
+      <!-- 轮播（Carousel）指标 -->
+      <ol class="carousel-indicators">
+        <li data-target="#partneradviceCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#partneradviceCarousel" data-slide-to="1"></li>
+      </ol>
+      <!-- 轮播（Carousel）项目 -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="col-md-3  col-xs-12">
+            <div class="homepage-partneradvice-content">
+              <img src="../img/homepage-partneradvice-content-pic1.png">
+              <span><strong>王思聪</strong><br>拓尔思集团创始人</span>
+              <div>
+                <div class="font-content">作为在萝卜多已经招募了50人</div>
+                <div class="font-content">的leader,萝卜多除了是我成功</div>
+                <div class="font-content">的基石,也是我的社交入口。</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3  col-xs-12">
+            <div class="homepage-partneradvice-content">
+              <img src="../img/homepage-partneradvice-content-pic2.png">
+              <span><strong>王思聪</strong><br>拓尔思集团创始人</span>
+              <div>
+                <div class="font-content">作为在萝卜多已经招募了50人</div>
+                <div class="font-content">的leader,萝卜多除了是我成功</div>
+                <div class="font-content">的基石,也是我的社交入口。</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3  col-xs-12">
+            <div class="homepage-partneradvice-content">
+              <img src="../img/homepage-partneradvice-content-pic3.png">
+              <span><strong>王思聪</strong><br>拓尔思集团创始人</span>
+              <div>
+                <div class="font-content">作为在萝卜多已经招募了50人</div>
+                <div class="font-content">的leader,萝卜多除了是我成功</div>
+                <div class="font-content">的基石,也是我的社交入口。</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3  col-xs-12">
+            <div class="homepage-partneradvice-content">
+              <img src="../img/homepage-partneradvice-content-pic4.png">
+              <span><strong>王思聪</strong><br>拓尔思集团创始人</span>
+              <div>
+                <div class="font-content">作为在萝卜多已经招募了50人</div>
+                <div class="font-content">的leader,萝卜多除了是我成功</div>
+                <div class="font-content">的基石,也是我的社交入口。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-md-3  col-xs-12">
+            <div class="homepage-partneradvice-content">
+              <img src="../img/homepage-partneradvice-content-pic2.png">
+              <span><strong>王思聪</strong><br>拓尔思集团创始人</span>
+              <div>
+                <div class="font-content">作为在萝卜多已经招募了50人</div>
+                <div class="font-content">的leader,萝卜多除了是我成功</div>
+                <div class="font-content">的基石,也是我的社交入口。</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3  col-xs-12">
+            <div class="homepage-partneradvice-content">
+              <img src="../img/homepage-partneradvice-content-pic3.png">
+              <span><strong>王思聪</strong><br>拓尔思集团创始人</span>
+              <div>
+                <div class="font-content">作为在萝卜多已经招募了50人</div>
+                <div class="font-content">的leader,萝卜多除了是我成功</div>
+                <div class="font-content">的基石,也是我的社交入口。</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3  col-xs-12">
+            <div class="homepage-partneradvice-content">
+              <img src="../img/homepage-partneradvice-content-pic4.png">
+              <span><strong>王思聪</strong><br>拓尔思集团创始人</span>
+              <span class="font-content">作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</span>
+            </div>
+          </div>
+          <div class="col-md-3  col-xs-12">
+            <div class="homepage-partneradvice-content">
+              <img src="../img/homepage-partneradvice-content-pic1.png">
+              <span><strong>王思聪</strong><br>拓尔思集团创始人</span>
+              <div>
+              <div class="font-content">作为在萝卜多已经招募了50人</div>
+              <div class="font-content">的leader,萝卜多除了是我成功</div>
+              <div class="font-content">的基石,也是我的社交入口。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 轮播（Carousel）导航 -->
+      <button  type="button" class="carousel-btn-left"  href="#partneradviceCarousel"
+         data-slide="prev"><img src="../img/carousel-btn-left.png"></button>
+      <button class="carousel-btn-right" href="#partneradviceCarousel"
+         data-slide="next"><img src="../img/carousel-btn-right.png"></button>
+    </div>
+  </div>
+</main>

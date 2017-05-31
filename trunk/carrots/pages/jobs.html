@@ -1,0 +1,185 @@
+<div class="container">
+  <div class="row">
+    <!-- 找职位导航 -->
+    <div class="visible-lg visible-md findjob-nav">
+      <!-- 产品 -->
+      <findjobmodule min="1" max="3" class-name="icon-product"></findjobmodule>
+      <!-- 技术 -->
+      <findjobmodule min="4" max="8" class-name="icon-skill"></findjobmodule>
+      <findjobmodule min="9" max="11" class-name="icon-design"></findjobmodule>
+      <!-- 设计 -->
+    </div>
+    <div class="findjob-banner1">
+      <!-- 搜索框 -->
+
+      <div class="findjob-search-bg">
+        <span class="hidden-sm hidden-xs">公司名称</span>
+        <form>            
+          <input type="text" placeholder="输入公司名称">
+           <button class="">搜索</button>
+        </form>
+      </div>
+      <!-- 轮播图1 -->
+      <div findjobcarousel class="carousel slide" id="carousels-1" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousels-1" ng-repeat="x in findJob.data" data-slide-to="{{$index}}" ng-class="{'active':$index === 0}" ng-click="findJob.dot($index)">
+          </li>
+        </ol>
+        <div class="carousel-inner" role="listbox" >
+          <div class="item" ng-repeat="x in findJob.data" ng-class="{'active':$index === 0}">
+            <img class="img-responsive" ng-src={{x.img}}>
+          </div>
+        </div>
+        <div>
+          <a class="carousel-control banner-control" href="#carousels-1" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-menu-left"></span>
+          </a>
+          <a class="carousel-control banner-control banner-control-right" href="#carousels-1" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-menu-right"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <!-- 推荐职位和最新职位 -->
+    <div class="findjob-recommendjob col-xs-12">
+      <div class="col-xs-12 findjob-padding-30">
+        <a href="javascript:void(0)" ng-click="findJob.reconmmend()" ng-class="{'active':findJob.reconmmendOrNew === 0}">推荐职位</a>
+        <a href="javascript:void(0)" ng-click="findJob.newest()" ng-class="{'active':findJob.reconmmendOrNew === 1}">最新职位</a>
+        <!-- 跳转推荐职业页面或者最新职业页面 -->
+        <a ng-click="findJob.goToJobRecomOrnew()" href="javascript:void(0)" class="float-right">查看更多<span class="glyphicon glyphicon-menu-right "></span></a>
+      </div>
+      <!-- 路由推荐职位页面 请求数据-->
+      <div class="findjob-joblist col-xs-12" ng-if="findJob.reconmmendOrNew === 0">
+         <div class="col-lg-3 col-md-6 col-xs-12 " ng-repeat="x in findJob.jobs | limitTo: 8" ng-if="x.recommend === 1" >
+           <div class="findjob-joblist-job" ng-click="findJob.goToJobList(x.id)">
+             <div class="img-border">
+              <img ng-src="{{x.logo}}" alt="公司logo">
+             </div>
+             <div class="fingjob-joblist-detail">
+               <p class="red-font"><strong ng-bind="x.compensation | compensationFilter"></strong></p>
+               <p><strong ng-bind="x.name"></strong></p>
+               <p ng-bind="x.companyName" class="findjob-joblist-name"></p>
+             </div>
+           </div>
+         </div>
+      </div>
+      <!-- 最新职位 -->
+      <div class="findjob-joblist col-xs-12" ng-if="findJob.reconmmendOrNew === 1">
+         <div class="col-lg-3 col-md-6 col-xs-12 " ng-repeat="x in findJob.jobs | limitTo: 8" ng-if="x.recommend === 0" ng-click="findJob.goToJobList(x.id)">
+           <div class="findjob-joblist-job">
+             <div class="img-border">
+              <img ng-src="{{x.logo}}" alt="公司logo">
+             </div>
+             <div class="fingjob-joblist-detail">
+               <p class="red-font"><strong ng-bind="x.compensation | compensationFilter"></strong></p>
+               <p class="findjob-joblist-jobname"><strong  ng-bind="x.name"></strong></p>
+               <p ng-bind="x.companyName" class="findjob-joblist-name"></p>
+             </div>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- 推荐公司 -->
+    <div class="findjob-company col-xs-12">
+      <div class="col-xs-12 findjob-padding-30">
+        <a href="">推荐公司</a>
+        <a ui-sref="pageTab.searchCompany" class="float-right">查看更多<span class="glyphicon glyphicon-menu-right "></span></a>
+      </div>
+      <div class="col-xs-12 findjob-company-dedail">
+        <div class="col-md-4 col-xs-12 findjob-company-logo" ng-click="findJob.goToCompanyDetail(findJob.companies[0].id)">
+          <div class="findjob-company-logo-text">
+            <h5 ng-bind="findJob.companies[0].name"></h5>
+            <p ng-bind="findJob.companies[0].slogan"></p>
+            <div class="findjob-company-text-icon">
+              <span>
+                <img src="../img/phone-url-white.png" alt="">
+                <!-- 产业 -->
+                <span ng-bind="findJob.companies[0].industryList[0] | industryFilter"></span>
+              </span>
+              <span>
+                <img  src="../img/shangshi-white.png" alt="">
+                <!-- 融资规模 -->
+                <span ng-bind="findJob.companies[0].financing | financingFilter"></span>
+              </span>
+              <span>
+                <img  src="../img/location-white.png" alt="">
+                <!-- 城市 -->
+                <span ng-bind="findJob.companies[0].city | cityFilter"></span>
+              </span>
+            </div>
+          </div>
+          <img class="logo-img" src="../img/zzw-company-logo.png" alt="公司logo">
+
+        </div>
+        <div class="col-sm-2 col-xs-3 findjob-company-logos" ng-repeat="x in findJob.companies | limitTo: 9 |orderBy: '-id'" ng-click="findJob.goToCompanyDetail(x.id)" ng-if="$index>0">
+          <img ng-src="{{x.logo}}" alt="公司logo">
+        </div>
+        <div class="col-xs-12 col-sm-11 findjob-banner2">
+          <div findjobcarousel class="carousel slide vertical" id="carouselVertical" data-ride="carousel">
+            <ol class="carousel-indicators hidden-xs">
+              <li class="active" data-target="#carouselVertical" data-slide-to="0"></li>
+              <li data-target="#carouselVertical" data-slide-to="1"></li>
+              <li data-target="#carouselVertical" data-slide-to="2"></li>
+              <li data-target="#carouselVertical" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item" ng-click="findJob.goToCompanyDetail(x.id)" ng-class="{'active':$index ===0}" ng-repeat="x in findJob.companies  | limitTo : 4 |orderBy:'-id'">
+                <div class="col-xs-7 findjob-company-message">
+                  <div class="img-border hidden-xs">
+                    <img ng-src="{{x.logo}}" alt="公司logo">
+                  </div>
+                  <div class="findjob-company-tag">
+                    <strong ng-bind="x.name"></strong>
+                    <p ng-bind="x.slogan"></p>
+                    <span ng-repeat="z in x.industryList" ng-bind="z | industryFilter"></span>
+                  </div>
+                </div>
+                <div class="col-xs-5 findjob-company-jobs">
+                  <strong>正在热招</strong>
+                  <p>&nbsp</p>
+                  <span ng-repeat="y in findJob.jobs" ng-bind="y.name" ng-if="y.companyId === x.id"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 轮播结束 -->
+        </div>
+      </div>
+      <!-- 公司上下轮播 -->
+    </div>
+  </div>
+    <div class="row">
+      <!-- 无成本，零风险 弹性布局-->
+      <div class="col-xs-12 findjob-cost-father">
+        <div class="findjob-cost">
+          <div class="findjob-cost-flexbox">
+            <div class="findjob-flexbox-img">
+              <img src="../img/zzw-cost.png">
+            </div>
+            <div class="findjob-cost-text">
+              <h3>无成本，零风险</h3>
+              <p>无任何隐含费用全程免费</p>
+              <p>人才从投递到成功入职不需要任何费用，通过测试后还可免费提供从业建议，不浪费每一分天赋。</p>
+            </div>
+          </div>
+          <div class="findjob-cost-flexbox">
+            <div class="findjob-cost-text">
+              <h3>高效匹配，高度契合</h3>
+              <p>1-3天发送首个聘请通知甄选职位 深度匹配  发送聘请通知</p>
+              <p>3-5天安排候选人面试安排面试协助客户快速入职</p>
+              <p>平均15天推荐成功多方洽谈 售后服务</p>
+            </div>
+            <div class="findjob-flexbox-img">
+              <img src="../img/zzw-match.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <img class="findjob-bottom-png col-xs-12" src="../img/zzw-bottom.png">
+    </div>
+    </div>

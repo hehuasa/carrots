@@ -1,0 +1,92 @@
+<main>
+  <div class="companydetails-head">
+    <div class="companydetails-head-pic">
+      <img ng-src={{ctrl.companyData.company.logo}}></div>
+    <span class="companydetails-head-text">
+      <div>
+        <span class="font-tittle" ng-bind="ctrl.companyData.company.name"></span>
+        <span class="companydetails-head-tags" ng-show="ctrl.approved(ctrl.companyData.company.approved)"><img src="../img/V.png">萝卜多认证</span>
+      </div>
+      <div class="font-content" ng-bind="ctrl.companyData.company.slogan"></div>
+    </span>
+  </div>
+  <div class="companydetails-content">
+
+    <div class="col-md-8 col-xs-12" ng-show="ctrl.jobs">
+    <div class="border-bottom">
+      <a class="font-content" ng-click="ctrl.companyDetail()">公司详情</a>
+      <a class="font-content red companydetails-content-selected" ng-click="ctrl.companyJobs()">在招职位</a>
+    </div>
+    <div class="border-right">
+      <div class="companydetails-content-tittle">
+        <span class="font-content ddark-blue">在招职位</span>
+        <span class="font-content" ng-bind="ctrl.professionData.length"></span>
+        <span class="font-content ddark-blue">个</span>
+      </div>
+      <div class="recruiting-options">
+        <div class="selected-tittle">职业类别     </div>
+        <span ng-repeat="x in ctrl.professionCategory">
+          <span ng-bind="x.name" ng-class={true:'selected'}[ctrl.checkbox(ctrl.professionCategory,$index,ctrl.category)||(ctrl.category.length==0&&$first)]
+          ng-click="ctrl.selectCategory(ctrl.professionCategory,$index,ctrl.category)"></span>
+        </span>
+      </div>
+      <div class="recruiting-list" ng-repeat="x in ctrl.professionData">
+        <span class="font-tittle" ng-bind="x.name"></span>
+        <!--<span class="font-tittle">[</span>-->
+        <!--<span class="font-tittle" ng-bind="x.city | cityFilter"></span>-->
+        <!--<span class="font-tittle">]       </span>-->
+        <span class="font-content">                                                  </span>
+        <span class="font-content red" ng-bind="x.compensation | compensationFilter">       </span>
+        <span class="font-content" ng-bind="x.experience|experienceFilter">                 </span>  /
+        <span class="font-content" ng-bind="x.education|educationFilter">                 </span>  /
+        <span class="font-content">全职                  </span>
+        <span class="font-tags" ng-bind="x.updateAt|date:'yyyy-MM-dd HH:mm:ss'">15:03</span>
+        <span class="font-tags">发布</span>
+      </div>
+    </div>
+  </div>
+    <div class="col-md-8 col-xs-12"  ng-show="ctrl.company">
+      <div class="border-bottom">
+        <a class="font-content  red companydetails-content-selected" ng-click="ctrl.companyDetail()">公司详情</a>
+        <a class="font-content" ng-click="ctrl.companyJobs()">在招职位</a>
+      </div>
+      <div class="border-right">
+        <div class="companydetails-content-tittle">
+          <div class="font-content ddark-blue">公司介绍</div>
+        </div>
+        <div class="font-content ddark-blue" ng-bind="ctrl.companyData.company.summary"></div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-xs-12">
+      <div class="companydetails-content-companyinfo">
+        <div class="companydetails-content-companyinfo-tittle">
+          <span class="font-content">公司信息 </span>
+          <span class="companyinfo-line"></span>
+        </div>
+        <div class="companyinfo-detail">
+          <span><img src="../img/body.png"></span>
+          <span class="font-content" ng-bind="ctrl.companyData.company.totalNum"></span>
+        </div>
+        <div class="companyinfo-detail">
+          <span><img src="../img/bottle.png"></span>
+          <span class="font-content" ng-repeat="x in ctrl.companyData.industryList"><span ng-bind="x.industry|industryFilter"></span></span>
+        </div>
+        <div class="companyinfo-detail">
+          <span><img src="../img/location-gray.png"></span>
+          <span class="font-content">  北京</span>
+        </div>
+        <div class="companydetails-content-companyinfo-tittle">
+          <span class="font-content" >公司标签 </span>
+          <span class="companyinfo-line"></span>
+        </div>
+        <div>
+          <span class="font-tags companydetails-companyinfo-tags"   ng-repeat="x in ctrl.companyData.tagList"><span ng-bind="x.tags"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+

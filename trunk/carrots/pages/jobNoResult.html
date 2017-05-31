@@ -1,0 +1,25 @@
+<main>
+  <div class="searchCompany-result-content">
+    <div class="searchCompany-result-content-info">
+      <img src="../img/ufo.png">
+      <div>
+      <div class="font-tittle">   暂时没有符合该搜索条件的工作</div>
+      <div class="font-content">   请重新修改搜索条件后再次进行搜索</div>
+      </div>
+    </div>
+    <div class="searchCompany-result-Recommend">
+      <div class="font-tittle">推荐工作</div>
+    <div class="col-md-4 col-xs-12 clear-padding-left clear-padding-right" ng-repeat="x in ctrl.data|limitTo:3">
+      <div class="search-company-banner">
+        <div class="search-company-banner-logo"><img ng-src={{x.logo}}></div>
+        <div class="search-company-banner-text">
+          <div class="font-tittle" ng-bind="x.name"  ui-sref="pageTab.jobDetails({id:x.id})"></div>
+          <div class="font-tittle red" ng-bind="x.compensation | compensationFilter"></div>
+          <div class="font-tittle" ng-bind="x.companyName"  ui-sref="pageTab.companyDetails({id:x.companyId})"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</main>

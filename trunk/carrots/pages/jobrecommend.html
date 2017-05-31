@@ -1,0 +1,85 @@
+<main>
+  <div class="newPosition-searchOption">
+	<div class="font-tittle">
+	  推荐职位</div>
+	<div class="newPosition-searchOption-content">
+	  <div>
+		<span class="selected-tittle">关&ensp;键&ensp;词：</span>
+		<input type="text" ng-change="ctrl.getName()" ng-model="ctrl.professionName">
+		<span class="font-tags">当前关键词：</span><span class="font-tags" ng-bind="ctrl.professionName"></span>
+	  </div>
+	  <div>
+		<span class="selected-tittle">所在地区：</span>
+      <span ng-repeat="x in ctrl.city">
+          <a class="font-content" ng-class="{true:'selected'}[ctrl.checkbox(ctrl.city,$index,ctrl.professionCity)||(ctrl.professionCity.length==0&&$first)]"
+			 ng-bind="x.name" ng-click="ctrl.getParameter(ctrl.city,$index,ctrl.professionCity)">
+		  </a></span>
+	  </div>
+	  <div>
+		<span class="selected-tittle">所属行业：</span>
+        <span ng-repeat="x in ctrl.industry">
+          <a class="font-content" ng-class="{true:'selected'}[ctrl.checkbox(ctrl.industry,$index,ctrl.professionIndustry)||(ctrl.professionIndustry.length==0&&$first)]"
+			 ng-bind="x.name" ng-click="ctrl.getParameter(ctrl.industry,$index,ctrl.professionIndustry)">
+		  </a></span>
+	  </div>
+	  <div>
+		<span class="selected-tittle">学历要求：</span>
+        <span ng-repeat="x in ctrl.education">
+          <a class="font-content" ng-class="{true:'selected'}[ctrl.checkbox(ctrl.education,$index,ctrl.professionEducation)||(ctrl.professionEducation.length==0&&$first)]"
+			 ng-bind="x.name" ng-click="ctrl.getParameter(ctrl.education,$index,ctrl.professionEducation)"></a>
+        </span>
+	  </div>
+	  <div>
+		<span class="selected-tittle">工作经验：</span>
+        <span ng-repeat="x in ctrl.experience">
+          <a class="font-content" ng-class="{true:'selected'}[ctrl.checkbox(ctrl.experience,$index,ctrl.professionExperience)||(ctrl.professionExperience.length==0&&$first)]"
+			 ng-bind="x.name" ng-click="ctrl.getParameter(ctrl.experience,$index,ctrl.professionExperience)"></a>
+        </span>
+	  </div>
+	  <div>
+		<span class="selected-tittle">薪资水平：</span>
+        <span ng-repeat="x in ctrl.compensation">
+          <a type="button" class="font-content" ng-class="{true:'selected'}[ctrl.checkbox(ctrl.compensation,$index,ctrl.professionCompensation)||(ctrl.professionCompensation.length==0&&$first)]"
+			 ng-bind="x.name" ng-click="ctrl.getParameter(ctrl.compensation,$index,ctrl.professionCompensation)"></a>
+          </span>
+	  </div>
+	  <div>
+		<span class="selected-tittle">发布时间：</span>
+        <span ng-repeat="x in ctrl.updateAt">
+          <a class="font-content" ng-class="{true:'selected'}[ctrl.checkbox(ctrl.updateAt,$index,ctrl.professionUpdateAt)||(ctrl.professionUpdateAt.length==0&&$first)]"
+			 ng-bind="x.name" ng-click="ctrl.getParameter(ctrl.updateAt,$index,ctrl.professionUpdateAt)" ></a>
+          </span>
+	  </div>
+	  <a class="font-content newPosition-searchOption-content-clear" ng-click="ctrl.clear()">清空</a>
+	  <a class="selected newPosition-searchOption-content-search" ng-click="ctrl.search()">搜索</a>
+	  <!--ui-sref="pageTab.jobNewest({data:ctrl.professionParam})"-->
+	  <!--ui-sref-opts="{reload:true}" -->
+
+	</div>
+  </div>
+  <div class="newPosition-content" ng-repeat="x in ctrl.data">
+	<div class="newPosition-content-jobs">
+	  <div  class="col-md-6 border-right col-xs-12">
+		<a class="font-tittle" ng-bind="x.name" ui-sref="pageTab.jobDetails({id:x.id})"></a>
+		<span class="font-tags" >发布时间：<span ng-bind="x.updateAt | date : 'yyyy-MM-dd hh:mm:ss'"></span></span><br>
+		<span class="font-content red" ng-bind="x.compensation | compensationFilter"></span><br>
+		<span class="font-content"><span ng-bind="x.city | cityFilter"></span>-<span ng-bind="x.county | countyFilter"></span>/<span ng-bind="x.education | educationFilter"></span> /<span ng-bind="x.experience | experienceFilter"></span></span>
+	  </div>
+	  <div class="col-md-6 col-xs-12">
+		<a class="font-tittle" ng-bind="x.companyName" ui-sref="pageTab.companyDetails({id:x.companyId})"></a><br>
+		<span class="font-content"  ng-repeat= "a in x.industryList"><span ng-bind="a.industry | industryFilter"></span></span><br>
+		<span class="font-tags newPosition-content-jobs-tags" ng-repeat="z in  x.tags"></span>
+		<div>
+          <span class="newPosition-content-jobs-pic">
+            <img ng-src={{x.logo}}>
+          </span>
+		</div>
+	  </div>
+
+	</div>
+  </div>
+  <div>
+    <ul uib-pagination items-per-page="2" total-items="ctrl.items" ng-model="ctrl.page" max-size="2" class="pagination-sm" boundary-links="true" boundary-link-numbers="true" previous-text="<" next-text=">" first-text="首页" last-text="末页" ng-change="ctrl.pageChange()"></ul>
+  </div>
+</main>
+<div ui-view=""></div>

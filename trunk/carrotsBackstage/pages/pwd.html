@@ -1,0 +1,36 @@
+<div class="col-sm-12 border-normal">
+  <div class="col-sm-12">
+  <span>密码修改</span>
+    <hr/>
+  </div>
+  <form class="col-xs-10 col-xs-offset-1" name="myForm" novalidate>
+    <div class="form-group col-xs-12 account-form">
+        <label class="col-xs-6 col-sm-2" for="role">输入旧密码</label>
+        <input class="account-form-control col-xs-6 col-sm-10" name="oldPwd" type="password" ng-model="ctrl.manager.oldPwd" ng-pattern="/^[0-9]{6}$/" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form" ng-show="myForm.oldPwd.$invalid&&myForm.oldPwd.$dirty">
+
+      <p class="col-xs-6 col-sm-10 col-sm-offset-2 col-xs-offset-6">必须且只含有数字，位数为6位</p>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role" >设置新密码</label>
+      <input name="pwd" class="account-form-control col-xs-6 col-sm-10" type="password" name="newPwd" ng-model="ctrl.manager.newPwd" ng-pattern="/^[0-9]{6}$/" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form" ng-show="myForm.pwd.$invalid&&myForm.pwd.$dirty">
+      <p class="col-xs-6 col-sm-10 col-sm-offset-2 col-xs-offset-6">必须且只含有数字，位数为6位</p>
+    </div>
+    <div class="form-group col-xs-12 account-form" ng-show="(ctrl.manager.oldPwd === ctrl.manager.newPwd)&&myForm.oldPwd.$dirty&&myForm.pwd.$dirty">
+      <p class="col-xs-6 col-sm-10 col-sm-offset-2 col-xs-offset-6">新旧密码不能相同</p>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role" >确认新密码</label>
+      <input name="phone" class="account-form-control col-xs-6 col-sm-10" type="password"  ng-model="ctrl.rpwd" ng-pattern="/^[0-9]{6}$/" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form" ng-show="ctrl.manager.newPwd !==ctrl.rpwd && !myForm.rpwd.$invalid">
+      <p class="col-xs-6 col-sm-10 col-sm-offset-2 col-xs-offset-6">两次输入密码不一致</p>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <button class="col-xs-6 col-sm-10 col-sm-offset-2 btn btn-success" ng-disabled="(myForm.$invalid)||(ctrl.manager.oldPwd === ctrl.manager.newPwd)||(ctrl.manager.newPwd !==ctrl.rpwd)" ng-click="ctrl.save()">保存</button>
+    </div>
+  </form>
+</div>

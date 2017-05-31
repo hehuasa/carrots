@@ -1,0 +1,61 @@
+ <div class="panel-body " ui->
+                <ul class="list-group " >
+                    <li class="list-group-item list-tittle  reset-ul">
+                        <div class="col-xs-1 heiti font-s center reset-ul">ID</div>
+                        <div class="col-xs-2 heiti font-s center reset-ul">名称</div>
+                        <div class="col-xs-2 heiti font-s center reset-ul">类型</div>
+                        <div class="col-xs-1 heiti font-s center reset-ul">发布时间</div>
+                        <div class="col-xs-1 heiti font-s center reset-ul">修改时间</div>
+                        <div class="col-xs-1 heiti font-s center reset-ul">发布者</div>
+                        <div class="col-xs-1 heiti font-s center reset-ul">状态</div>
+                        <div class="col-xs-3 heiti font-s center reset-ul">操作</div>
+                    </li>
+                    </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                    <li class=" reset-li  "  ng-repeat="x in a track by $index" >{{x.id}}
+                    </li>
+                </ul>
+                <ul class="col-xs-2 heiti font-s center reset-ul">
+                    <li class=" reset-li"  ng-repeat="x in a track by $index" >{{x.title}}
+                    </li>
+                </ul>
+                <ul class="col-xs-2 heiti font-s center reset-ul">
+                    <li class=" reset-li"  ng-repeat="x in a track by $index" >{{x.type}}
+                    </li>
+                </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                <li class=" reset-li"  ng-repeat="x in a track by $index" >{{x.createAt| date:'yyyy-MM-dd HH:mm:ss' }}
+                </li>
+                </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                <li class=" reset-li"  ng-repeat="x in a  track by $index" >{{x.updateAt| date:'yyyy-MM-dd HH:mm:ss' }}
+                </li>
+                </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                    <li class=" reset-li"  ng-repeat="x in a  track by $index" >{{x.author}}
+                    </li>
+                </ul>
+                <ul class="col-xs-1 heiti font-s center reset-ul">
+                    <li class=" reset-li"  ng-repeat="x in a track by $index" >{{x.status}}
+                    </li>
+                </ul>
+                <ul class="col-xs-3 heiti font-s center reset-ul">
+                    <li class=" reset-li" ng-repeat="z in b track by $index">
+                       <a href="#"> {{z.a}} </a>&nbsp;&nbsp;&nbsp;<a href="#"> {{z.b}} </a>&nbsp;&nbsp;&nbsp; <a href="#"> {{z.c}} </a>
+                    </li>
+                </ul>
+                <div class="page font-s">
+                    <form>
+                        每页显示 <input type="text" class="page-input" ng-model="page" > 条</form>
+                    <button type="button"><a href="#">首页</a></button>
+                    <button type="button"><a href="#"><</a></button>
+                    <button type="button"><a href="#">1</a></button>
+                    <button type="button"><a href="#">2</a></button>
+                    <button type="button" ng-click="next()">></button>
+                    <button type="button"><a href="#">末页</a></button>
+                    <form>{{page}}
+                        去第 <input type="text"> 页</form>
+                    <button type="button" ng-click="http()">确定</button>
+                </div>
+            </div>
+

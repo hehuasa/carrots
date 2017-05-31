@@ -1,0 +1,33 @@
+@import url(layout.less);
+html{
+  font-size: 625%;
+}
+body{
+    background: #f6f7f8;
+  }
+
+main{
+  width: 100%;
+  text-align: center;
+}
+// 边框及边框hover，阴影
+.border-gray {
+  border: 1px solid @middle-gray;
+  &:hover {
+    box-shadow: 2px 2px 2px @gray;
+  }
+}
+.bg-fff {
+  background: @white;
+}
+.border-left {
+  border-left: solid 5px @red;
+}
+// border-radius兼容写法
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}

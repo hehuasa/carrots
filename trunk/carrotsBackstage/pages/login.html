@@ -1,0 +1,19 @@
+<div class="login-bg">
+    <div class="login-box">
+        <h3>萝卜多后台登录</h3>
+        <div class="login-account">
+            <img src="http://119.10.57.69:880/jnshu265/pic/jstask5/head.png"alt="none">
+            <form action="">
+            <input type="text" name="user-id" class="login-id" ng-model="ctrl.name" id="user" placeholder="用户名">
+            </form>
+        </div>
+        <div class="login-password">
+            <img src="http://119.10.57.69:880/jnshu265/pic/jstask5/lock.png">
+            <form action="">
+                <input type="password" name="psw" class="login-psw" ng-model="ctrl.pwd" placeholder="密码">
+            </form>
+        </div>
+        <p class="login-remind" ng-bind="ctrl.message">&nbsp</p>
+        <button type="submit" ng-click="ctrl.login()" id="login">登录</button>
+    </div>
+</div>

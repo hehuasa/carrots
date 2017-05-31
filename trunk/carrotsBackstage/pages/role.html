@@ -1,0 +1,43 @@
+<div class="col-sm-12 border-normal">
+  <div class="col-sm-12">
+  <span>角色管理</span>
+  <a class="btn btn-danger button-right" href="javascript:void(0)" ui-sref="homepage.roleAdd">新增</a>
+    <hr/>
+  </div>
+  <div class="col-sm-12">
+    <!-- 表格 -->
+    <table class="table table-table">
+      <thead>
+        <th >ID</th>
+        <th>角色名</th>
+        <th>创建人</th>
+        <th>创建时间</th>
+        <th>更新人</th>
+        <th>更新时间</th>
+        <th>操作</th>
+      </thead>
+        <tr ng-repeat="x in ctrl.roleList">
+          <td ng-bind="x.id"></td><!-- 序号 -->
+          <td ng-bind="x.name"></td><!-- 名称 -->
+          <td ng-bind="x.createBy"></td><!-- 创建人 -->
+          <td ng-bind="x.updateAt | date:'yyyy-MM-dd HH:mm'"></td><!-- 创建时间 -->
+          <td ng-bind="x.updateBy"></td><!-- 更新人 -->
+          <td ng-bind="x.updateAt | date:'yyyy-MM-dd HH:mm'"></td><!-- 更新时间 -->
+          <td>
+            <button class="btn btn-success account-editor" ng-click="ctrl.editor(x.id)">编辑</button>
+            <button class="btn btn-danger account-editor" ng-click="ctrl.delete(x.id)">删除</button>
+          </td><!-- 操作 -->
+        </tr>
+    </table>
+      <!-- 分页 -->
+    <form class="page-form">
+      <div class="form-group account-form">
+        <label class="" for="page" >去第&nbsp</label>
+        <input id="page" class="" type="text" ng-model="ctrl.page">
+        <label class="col-xs-3" for="page" >页</label>
+        <button class="btn btn-primary button-right" ng-click="ctrl.pageChange()">确定</button>
+      </div>
+    </form>
+    <ul uib-pagination items-per-page="10" total-items="ctrl.items" ng-model="ctrl.page" max-size="10" class="pagination-sm page-ul" boundary-links="true" boundary-link-numbers="true" previous-text="<" next-text=">" first-text="首页" last-text="末页" ng-change="ctrl.pageChange()"></ul>
+  </div>
+</div>

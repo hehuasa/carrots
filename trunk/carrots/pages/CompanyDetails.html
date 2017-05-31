@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/header&footer.css">
+  <link rel="stylesheet" href="../css/new position.css">
+  <title>Title</title>
+</head>
+<body>
+<header>
+  <div class="header-warp">
+    <div class="h-logo">
+      <div class="h-logo-img">
+        <img src="../img/carrots-logo.png">
+      </div>
+      <div class="h-location">
+        <img src="../img/location.png">  北京站</div>
+    </div>
+    <ul class="nav navbar-nav">
+      <!--通过路由判断当前页面，添加类名active-->
+      <li class=" header-nav" >首页</li>
+      <li class=" header-nav" >找职位</li>
+      <li class=" header-nav" >找精英</li>
+      <li class=" header-nav" >关于我们</li>
+    </ul>
+    <button class="header-btn" type="button" data-toggle="collapse" data-target="#h_nav">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <ul class="nav collapse" id="h_nav">
+    <!--通过路由判断当前页面，添加类名active-->
+    <li>首页</li>
+    <li>找职位</li>
+    <li>找精英</li>
+    <li>关于我们</li>
+  </ul>
+</header>
+<main>
+  <div class="jobdetails-warp">
+    <div class="col-md-8">
+    <div class="jobdetails-warp-jobdetails">
+      <div class="font-tittle">高级产品经理</div>
+      <div class="font-tags">携程旅行网</div>
+      <div>
+        <span class="font-content red">8K-15K</span>
+        <span class="font-content"><img src="../img/location-gray.png"> 北京  </span>
+        <span class="font-content"><img src="../img/hat.png"> 统招本科  </span>
+        <span class="font-content"><img src="../img/bag.png"> 3年以上经验</span>
+      </div>
+      <div class="jobdetails-warp-jobdetails-tags">
+        <span class="newPosition-content-jobs-tags font-tags">五险一金</span>
+      </div>
+      <div>
+        <span class="font-tags"><img src="../img/clock.png"> 发布时间： </span>
+        <span class="font-tags"></span>
+      </div>
+      <div class="font-tittle jobdetails-warp-description">职位描述</div>
+      <div class="font-content">...</div>
+    </div>
+  </div>
+    <div class="col-md-4">
+      <div class="jobdetails-warp-companyInfo">
+        <div class="jobdetails-warp-companyInfo-pic"></div>
+        <div>
+          <span class="font-content">携程旅行网</span>
+        <span><img src="../img/paperclip.png"></span></div>
+      <div class="companyInfo-basicinfo">
+        <span class="font-content">基本信息 </span>
+        <span class="companyInfo-line"></span>
+      </div>
+      <div class="companyinfo-detail">
+        <span><img src="../img/body.png"></span>
+        <span class="font-content">   5000人</span>
+      </div>
+        <div class="companyinfo-detail">
+          <span><img src="../img/bottle.png"></span>
+          <span class="font-content">   O2O旅游/互联网金融</span>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-8">
+      <div class="companyinfo-share">
+        <span><img src="../img/share.png"></span>
+        <span class="font-content"> 分享  </span>
+        <span><img src="../img/wechat-logo.png"></span>
+        <span><img src="../img/qq-logo.png"></span>
+        <span><img src="../img/weibo-logo.png"></span>
+        <button type="button" class="companyinfo-share-btn">我感兴趣</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-aboutus">
+      <div><a class="font-content">关于我们</a></div>
+      <div class="font-content">萝卜多──知根知底的社群招聘</div>
+    </div>
+    <div class="footer-contactus">
+      <div><a class="font-content">联系我们</a></div>
+      <div class="font-content"><img src="../img/phone.png"> 联系电话：（010）59478634</div>
+      <div class="font-content"><img src="../img/mail.png"> 邮箱支持：fuhua@ptteng.com</div>
+      <div class="font-content"><img src="../img/map.png"> 地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：北京市海淀区翠微路甲10#225室</div>
+    </div>
+    <div class="QR">
+      <img src="../img/QR-code.png">
+      <div class="font-content">微信号：ptteng-fuhuaqi</div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    Copyright © 2015 北京葡萄藤信息技术有限公司 All Rights Reserved | 京ICP备15035574号-1
+  </div>
+
+</footer>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</html>

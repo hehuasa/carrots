@@ -1,0 +1,37 @@
+<div class="col-xs-12 border-normal">
+  <form class="col-xs-10 col-xs-offset-1" name="myForm" novalidate>
+    <div class="form-group col-xs-12 account-form">
+        <label class="col-xs-6 col-sm-2" for="role">登录名</label>
+        <input class="account-form-control col-xs-6 col-sm-10" type="text" ng-model="ctrl.manager.name" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role" >手机号</label>
+      <input name="phone" class="account-form-control col-xs-6 col-sm-10" type="text"  ng-model="ctrl.manager.phone" ng-pattern="/^1[3|5][0-9]\d{8}$/" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form" ng-show="myForm.phone.$invalid&&myForm.phone.$dirty">
+      <p class="col-xs-6 col-sm-10 col-sm-offset-2 col-xs-offset-6">请输入11位手机号</p>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role" >密码</label>
+      <input name="pwd" class="account-form-control col-xs-6 col-sm-10" type="text" ng-model="ctrl.manager.pwd" ng-pattern="/^[0-9]{6}$/" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form" ng-show="myForm.pwd.$invalid&&myForm.pwd.$dirty">
+      <p class="col-xs-6 col-sm-10 col-sm-offset-2 col-xs-offset-6">必须且只含有数字，位数为6位</p>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+      <label class="col-xs-6 col-sm-2" for="role">确认密码</label>
+      <input name="rpwd" class="account-form-control col-xs-6 col-sm-10" type="text" ng-model="ctrl.rpwd" required/>
+    </div>
+    <div class="form-group col-xs-12 account-form" ng-show="ctrl.manager.pwd !==ctrl.rpwd && !myForm.rpwd.$invalid">
+      <p class="col-xs-6 col-sm-10 col-sm-offset-2 col-xs-offset-6">两次输入密码不一致</p>
+    </div>
+    <div class="form-group col-xs-12 account-form">
+        <label class="col-xs-6 col-sm-2" for="role" >角色</label>
+        <select class="col-xs-6 col-sm-10 account-form-control" id="role" ng-model="ctrl.manager.roleID" ng-options="x.id as x.name for x in ctrl.roleList" required/></select>
+    </div>
+    <div class="col-xs-10 col-xs-offset-2 text-center">
+      <button class="btn btn-success col-xs-4" ng-disabled="myForm.$invalid" ng-click="ctrl.new()">保存</button>
+      <button class="btn btn-danger col-xs-4 col-xs-offset-4" back>取消</button>
+    </div>
+  </form>
+</div>
